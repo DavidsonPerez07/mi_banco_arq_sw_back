@@ -71,6 +71,7 @@ public class TransactionService {
             dto.setId(transaction.getId());
             dto.setSenderAccountNumber(transaction.getSenderAccountNumber());
             dto.setReceiverAccountNumber(transaction.getReceiverAccountNumber());
+            dto.setTimestamp(transaction.getTimestamp());
             dto.setAmount(transaction.getAmount());
             return dto;
         }).collect(Collectors.toList());
