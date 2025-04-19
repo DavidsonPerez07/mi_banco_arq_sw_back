@@ -23,13 +23,13 @@ public class TransactionController {
         if(transactionDTO.getSenderAccountNumber() == null){
             throw new IllegalArgumentException("Sender account cannot be null");
         }
-        if(transactionDTO.getReceiverAccountNumber() == null){
+        else if(transactionDTO.getReceiverAccountNumber() == null){
             throw new IllegalArgumentException("Receiver account cannot be null");
         }
-        if(transactionDTO.getAmount() == null){
+        else if(transactionDTO.getAmount() == null){
             throw new IllegalArgumentException("Amount cannot be null");
         }
-        if(transactionDTO.getTimestamp() == null){
+        else if(transactionDTO.getTimestamp() == null){
             throw new IllegalArgumentException("Timestamp cannot be null");
         }
 
