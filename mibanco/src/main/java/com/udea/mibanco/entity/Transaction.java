@@ -23,9 +23,9 @@ public class Transaction {
     @Column(nullable = false)
     private Double amount;
     @Column(nullable = false)
-    private LocalDateTime timestamp;
+    private String timestamp;
 
-    public Transaction(Long id, String senderAccountNumber, String receiverAccountNumber, Double amount, LocalDateTime timestamp) {
+    public Transaction(Long id, String senderAccountNumber, String receiverAccountNumber, Double amount, String timestamp) {
         this.id = id;
         this.senderAccountNumber = senderAccountNumber;
         this.receiverAccountNumber = receiverAccountNumber;

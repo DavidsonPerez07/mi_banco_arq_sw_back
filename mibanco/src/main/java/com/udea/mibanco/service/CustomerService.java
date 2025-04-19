@@ -35,4 +35,14 @@ public class CustomerService {
         Customer customer= customerMapper.toEntity(customerDTO);
         return customerMapper.toDTO(customerRepository.save(customer));
     }
+
+    public Boolean deleteCustomer(Long id) {
+        if (customerRepository.existsById(id)) {
+            customerRepository.deleteById(id);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

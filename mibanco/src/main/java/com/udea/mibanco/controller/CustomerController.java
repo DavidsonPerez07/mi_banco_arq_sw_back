@@ -2,6 +2,7 @@ package com.udea.mibanco.controller;
 
 import com.udea.mibanco.DTO.CustomerDTO;
 import com.udea.mibanco.service.CustomerService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,5 +38,16 @@ public class CustomerController {
         }
 
         return ResponseEntity.ok(customerFacade.createCustomer(customerDTO));
+    }
+
+    //Borrar cliente
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteCustomer(@PathVariable Long id){
+        if (customerFacade.deleteCustomer(id)) {
+            return ResponseEntity.ok().build();
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Customer not found");
+        }
     }
 }

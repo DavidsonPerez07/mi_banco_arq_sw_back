@@ -16,9 +16,9 @@ public class TransactionDTO {
     private String senderAccountNumber;
     private String receiverAccountNumber;
     private Double amount;
-    private LocalDateTime timestamp;
+    private String timestamp;
 
-    public TransactionDTO(Long id, String senderAccountNumber, String receiverAccountNumber, Double amount, LocalDateTime timestamp) {
+    public TransactionDTO(Long id, String senderAccountNumber, String receiverAccountNumber, Double amount, String timestamp) {
         this.id = id;
         this.senderAccountNumber = senderAccountNumber;
         this.receiverAccountNumber = receiverAccountNumber;
